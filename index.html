@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src = "Beverage.js"></script>
+    <script src = "Hamburger.js"></script>
+    <script src = "Salad.js"></script>
+    <script src = "Order.js"></script>
+
+    <script>
+        var cheeseburger = new Hamburger(Hamburger.SIZE_SMALL,Hamburger.STUFFING_CHEESE),
+            cola = new Cola(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD),
+            salad = new Salad(Salad.OLIVIE, Salad.WEIGHT_LARGE),
+            coffee = new Coffee(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD,Coffee.WITH_MILK),
+            bigking = new Hamburger(Hamburger.SIZE_LARGE,Hamburger.STUFFING_POTATO),
+            beverage = new Beverage(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD);
+        
+        var composition1 = [];
+        composition1.push(cheeseburger,cola,coffee, cheeseburger, salad);
+        
+        var composition2 = [];
+        composition2.push(cola,bigking);
+        
+        var order1 = new Order(composition1);
+        var order2 = new Order(composition2);
+
+        console.log(order1);
+        console.log(order1.getComposition());
+        //console.log(composition1);
+
+        console.log(order2);
+        console.log(order2.getComposition());
+        //console.log(composition2);
+
+        //order1.pay();
+        //order1.removePosition(cola);
+       
+    </script>
+</body>
+</html>
