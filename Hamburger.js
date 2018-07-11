@@ -1,3 +1,5 @@
+var MenuPosition = require('./MenuPosition').MenuPosition;
+
 /**
 * Класс, объекты которого описывают параметры гамбургера. 
 * 
@@ -8,6 +10,7 @@
 
 (function(){
     function Hamburger(size, stuffing) { 
+                MenuPosition.apply(this,size.price,size.calories);
                 this._size = size;
                 this._stuffing = stuffing;
             }
@@ -56,6 +59,9 @@
 })()
 
 
+module.exports = {
+    Hamburger: Hamburger
+  };
 
 /*
 console.log(Ham.getSize());

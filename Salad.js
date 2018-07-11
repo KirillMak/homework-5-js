@@ -1,3 +1,5 @@
+var MenuPosition = require('./MenuPosition').MenuPosition;
+
 /**
 * Класс, объекты которого описывают параметры салата. 
 * 
@@ -6,7 +8,7 @@
 * @param weight      Вес
 */
     function Salad(type, weight){
-
+         MenuPosition.apply(this,type.price,type.calories);
          this._type = type;
          this._weight = weight;
         
@@ -50,4 +52,7 @@ Salad.WEIGHT_LARGE = 400;
 Salad.prototype.constructor = Salad;
 
 
+module.exports = {
+    Salad: Salad
+  };
 

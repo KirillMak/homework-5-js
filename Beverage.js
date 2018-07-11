@@ -1,3 +1,5 @@
+var MenuPosition = require('./MenuPosition').MenuPosition;
+
 /**
 * Класс, объекты которого описывают параметры напитка. 
 * 
@@ -8,8 +10,8 @@
 
 (function(){
 
-    function Beverage(volume , temperature){
-
+    function Beverage(type, volume , temperature){
+        MenuPosition.apply(this,type.price,type.calories);
         this._volume = volume;
         this._temperature = temperature;
     
@@ -25,11 +27,11 @@
             return this._temperature;
         }
         Beverage.prototype.calculateCalories = function () {
-            return this.CALORIES;
+            return this.calories;
         }
 
         Beverage.prototype.calculatePrice = function () {
-            return this.PRICE;
+            return this.price;
         }
     
 
@@ -39,6 +41,8 @@
     Beverage.TEMPERATURE_COLD = "cold";
     Beverage.TEMPERATURE_HOT = "hot";
  
+    Beverage.COLA = {price: 10,calories: 20};
+    Beverage.COFFEE = {price:15,calories:30};
 
     window.Beverage = Beverage;
     
@@ -55,16 +59,14 @@
 * @param withSugar     Наличие сахара
 */
 
+/*
 
-
-    function Coffee(volume, temperature, withMilk,withSugar){
+    function Coffee(type, volume, temperature, withMilk,withSugar){
 
         
-        Beverage.call(this, volume, temperature);
-        /*
-        this._withMilk;
-        this._withSugar;*/
-
+        Beverage.call(this, type, volume, temperature);
+        
+/*
         if (withMilk === undefined) {
             this._withMilk = false;
           }
@@ -90,7 +92,7 @@
     Coffee.WITHOUT_MILK = "false";
     Coffee.WITH_SUGAR = "true";
     Coffee.WITHOUT_SUGAR = "false";
-
+*/
    
 
   
@@ -106,10 +108,10 @@
 */
 
 
-
-    function Cola(volume, temperature, withIce){
+/*
+    function Cola(type, volume, temperature, withIce){
         
-        Beverage.call(this, volume, temperature);
+        Beverage.call(this, type, volume, temperature);
 
         this._withIce;
         
@@ -127,3 +129,9 @@
     Cola.prototype.CALORIES = 40;
     Cola.prototype.PRICE = 50;
 
+*/
+
+
+module.exports = {
+    Beverage: Beverage
+  };

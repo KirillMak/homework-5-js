@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <script src = "MenuPosition.js"></script>
     <script src = "Beverage.js"></script>
     <script src = "Hamburger.js"></script>
     <script src = "Salad.js"></script>
@@ -14,11 +15,11 @@
 
     <script>
         var cheeseburger = new Hamburger(Hamburger.SIZE_SMALL,Hamburger.STUFFING_CHEESE),
-            cola = new Cola(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD),
+            cola = new Beverage(Beverage.COLA, Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD),
             salad = new Salad(Salad.OLIVIE, Salad.WEIGHT_LARGE),
-            coffee = new Coffee(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD,Coffee.WITH_MILK),
-            bigking = new Hamburger(Hamburger.SIZE_LARGE,Hamburger.STUFFING_POTATO),
-            beverage = new Beverage(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD);
+            coffee = new Beverage(Beverage.COFFEE, Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD),
+            bigking = new Hamburger(Hamburger.SIZE_LARGE,Hamburger.STUFFING_POTATO);
+            //beverage = new Beverage(Beverage.VOLUME_SMALL,Beverage.TEMPERATURE_COLD);
         
         var composition1 = [];
         composition1.push(cheeseburger,cola,coffee, cheeseburger, salad);
